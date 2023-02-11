@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Assigment>
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-dark">todo list</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Assigment" asp-action="Create" class="btn btn-transparent btn btn-outline-dark btn-lg btn-block mb-2 text-center">
+                <i class="bi-plus-circle">&nbsp; Add Task</i>
+            </a>
+        </div>
+    </div>
+    <br /><br />
+
+    <table class="table table-bordered thead-dark m-2 table-hover text-center" style="width:100%">
+        <thead>
+            <tr>
+                <th>
+                    Task Name
+                </th>
+                <th>
+                    Importance
+                </th>
+                <th>
+                    Deadline
+                </th>
+            </tr>
+        </thead>
+        <tbody style="border-radius: 5px;">
+            @foreach (var obj in Model)
+            {
+                <tr>
+                    <td width="70%">
+                        @obj.Name
+                    </td>
+                    <td width="20%">
+                        @obj.Importance
+                    </td>
+                    <td width="10%">
+                        @obj.Deadline.ToString("HH:mm")
+                    </td>
+                    
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

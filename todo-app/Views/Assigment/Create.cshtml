@@ -1,0 +1,43 @@
+﻿@model Assigment
+
+<form method="post">
+    <div class="border p-3 mt-4 text-center">
+        <div class="row pb-2">
+            <h2 class="">add task</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name" style="font-size:23px;">name:</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+
+
+            <label asp-for="Importance" style="font-size:23px;">choose importance:</label>
+            <br/>
+            <input type="radio" id="importance1" name="importance" value="Low" style="accent-color:black; "/>
+            <label for="importance1">low</label>
+            <input type="radio" id="importance2" name="importance" value="Medium" style="accent-color:black;" />
+            <label for="importance2">medium</label>
+            <input type="radio" id="importance3" name="importance" value="High" style="accent-color:black;" />
+            <label for="importance">high</label>
+            <br/>
+            <span asp-validation-for="Importance" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3">
+            <label for="deadline" style="font-size:23px;">deadline:</label>
+            <br />
+            <input type="time" id="deadline" name="deadline" class="p-1 btn-md border rounded border-dark mb-2 text-center" required>
+        </div>
+
+        <br />
+
+        <button type="submit" class="btn btn-transparent btn btn-outline-dark btn-lg btn-block mb-2 text-center" style="width:150px">create</button>
+        <a asp-controller="Category" asp-action="Index" class="btn btn-transparent btn btn-outline-dark btn-lg btn-block mb-2 text-center" style="width:150px">
+            back to list
+        </a>
+    </div>
+
+</form>
